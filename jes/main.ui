@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TELECOMMAND</class>
+ <widget class="QMainWindow" name="TELECOMMAND">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>937</width>
+    <height>658</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TELECOMMAND SIMULATOR</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="tc_comb">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>130</y>
+      <width>431</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="currentText">
+     <string>SIS</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>SIS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>EARTH_AQUS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SUN_AQUS</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>TRANSMITTER _ON</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>TRANSMITTER _OFF</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SPS_ON</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SPS_OFF</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DEPLOY_SOLARPANEL</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>PAYLOAD DATA</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="tccombo_title">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>90</y>
+      <width>191</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SELECT A TELECOMMAND</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="proc_labe">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>200</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TELECOMMAND PROCESSING</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ack_labe">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>360</y>
+      <width>101</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ACK WINDOW</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="main_title">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>271</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TELECOMMAND SIMLUTAOR</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="proc_win">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>811</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="ack_win">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>380</y>
+      <width>811</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>530</y>
+      <width>811</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="verify_btn">
+       <property name="text">
+        <string>Verify</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="send_btn">
+       <property name="text">
+        <string>Send</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancel_btn">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="isro_logo">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../../home/kannan/Downloads/isro_logo.ico</pixmap>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
