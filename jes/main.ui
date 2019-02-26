@@ -27,14 +27,14 @@
      <enum>Qt::LeftToRight</enum>
     </property>
     <property name="currentText">
-     <string>SIS</string>
+     <string>AXIS_STABLIZE</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
     <item>
      <property name="text">
-      <string>SIS</string>
+      <string>AXIS_STABLIZE</string>
      </property>
     </item>
     <item>

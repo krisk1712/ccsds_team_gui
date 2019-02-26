@@ -21,43 +21,164 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.cancel_btn.clicked.connect(exit)
 
     def vbtnClicked(self):
-        tc = ["SIS","Solar panel","Axis Stablize","SPS","Payload data","Sun aqus","Earth Aqus"]
+        tc = ["AXIS_STABLIZE","EARTH_AQUS","SUN_AQUS","TRANSMITTER _ON","TRANSMITTER _OFF","SPS_ON","SPS_OFF","DEPLOY_SOLARPANEL","PAYLOAD DATA"]
 
-        for i in tc:
-            if self.ui.telecm_menu.currentText() == i:  
-                self.ui.ack_view.setPlainText("The command "+ self.ui.telecm_menu.currentText()+" is verified and being processed... " )
+        if self.ui.tc_comb.currentText() == "AXIS_STABLIZE":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...")
+        elif self.ui.tc_comb.currentText() == "EARTH_AQUS":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...")  
+        elif self.ui.tc_comb.currentText() == "SUN_AQUS":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...") 
+        elif self.ui.tc_comb.currentText() == "TRANSMITTER _ON":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...") 
+        elif self.ui.tc_comb.currentText() == "TRANSMITTER _OFF":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...") 
+        elif self.ui.tc_comb.currentText() == "SPS_ON":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...") 
+        elif self.ui.tc_comb.currentText() == "SPS_OFF":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...") 
+        elif self.ui.tc_comb.currentText() == "DEPLOY_SOLARPANEL":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...")
+        elif self.ui.tc_comb.currentText() == "PAYLOAD DATA":
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is on VERFICATION STAGE...")
+            QtTest.QTest.qWait(5000)
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  verified...")
+        else:
+            self.ui.ack_win.setPlainText("Sorry no other option to be selected")
                 
 
     def sbtnClicked(self):
         
-        tc = ["SIS","Solar panel","Axis Stablize","SPS","Payload data","Sun Aqus","Earth Aqus"]
-        self.ui.ack_view.setPlainText("The command "+ self.ui.telecm_menu.currentText() +" is being Processed....\n" )
-        QtTest.QTest.qWait(5000) # uisng time.sleep in terminal on wards pls use it bro
-        self.ui.ack_view.appendPlainText("The command "+ self.ui.telecm_menu.currentText() +" is being send to the satellite \n")
-        on_launch = QPixmap('./img/satstowed.png')
-        on_solarpaneldep = QPixmap('./img/satdeployes.png')
-        on_AixStab = QPixmap('./img/asat-img.jpeg')
-        on_SPS = QPixmap('./img/satps.jpeg')
-        on_payloadat = QPixmap('./img/satonpayload.jpeg')
-        on_earthAqu = QPixmap('./img/eartjh-aqus.jpg')
-        on_sunAqu = QPixmap('./img/satonsun.jpeg')
-        for i in tc:
-            if self.ui.telecm_menu.currentText() == "SIS":
-                self.ui.img_wid.setPixmap(on_launch)
-            elif self.ui.telecm_menu.currentText() == "Solar panel":
-                self.ui.img_wid.setPixmap(on_solarpaneldep)  
-            elif self.ui.telecm_menu.currentText() == "Axis Stablize":
-                self.ui.img_wid.setPixmap(on_AixStab) 
-            elif self.ui.telecm_menu.currentText() == "SPS":
-                self.ui.img_wid.setPixmap(on_SPS) 
-            elif self.ui.telecm_menu.currentText() == "Payload data":
-                self.ui.img_wid.setPixmap(on_payloadat) 
-            elif self.ui.telecm_menu.currentText() == "Sun aqus":
-                self.ui.img_wid.setPixmap(on_sunAqu) 
-            elif self.ui.telecm_menu.currentText() == "Earth Aqus":
-                self.ui.img_wid.setPixmap(on_earthAqu) 
-            else:
-                self.ui.ack_view.setPlainText("Sorry no other option to be selected")
+        tc = ["AXIS_STABLIZE","EARTH_AQUS","SUN_AQUS","TRANSMITTER _ON","TRANSMITTER _OFF","SPS_ON","SPS_OFF","DEPLOY_SOLARPANEL","PAYLOAD DATA"]
+        
+
+
+        if self.ui.tc_comb.currentText() == "AXIS_STABLIZE":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 01AECD23 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,01AECD23,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...")
+        elif self.ui.tc_comb.currentText() == "EARTH_AQUS":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 8789AC43 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,8789AC43,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...")  
+        elif self.ui.tc_comb.currentText() == "SUN_AQUS":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 69984ACD <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,69984ACD,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...") 
+        elif self.ui.tc_comb.currentText() == "TRANSMITTER _ON":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> ACD1437DF <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,ACD1437DF,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...") 
+        elif self.ui.tc_comb.currentText() == "TRANSMITTER _OFF":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 76AC1340 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,76AC1340,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...") 
+        elif self.ui.tc_comb.currentText() == "SPS_ON":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 987ADC34 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,987ADC34,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...") 
+        elif self.ui.tc_comb.currentText() == "SPS_OFF":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 76ADFCB1 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,76ADFCB1,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...") 
+        elif self.ui.tc_comb.currentText() == "DEPLOY_SOLARPANEL":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 76AC1340 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,76AC1340,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...")
+        elif self.ui.tc_comb.currentText() == "PAYLOAD DATA":
+            self.ui.ack_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is being Processed.....")
+            self.ui.proc_win.appendPlainText("The Command "+ self.ui.tc_comb.currentText() + " is  Processing...")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The Equivalent packet data of  "+ self.ui.tc_comb.currentText() + " is --> 68AECD120 <--")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("The PACKET for "+ self.ui.tc_comb.currentText() + " is shown below..")
+            self.ui.proc_win.appendPlainText("---> [4EA36B01,83EC,[AA55BB66,1A0E,68AECD120,0101],1212]")
+            QtTest.QTest.qWait(2000)
+            self.ui.proc_win.appendPlainText("Sending the Command as packet to the satellite...")
+            QtTest.QTest.qWait(1000)
+            self.ui.ack_win.appendPlainText("THE command is sent to satellite...")
+        else:
+            self.ui.ack_win.setPlainText("Sorry no other option to be selected")
 
 app = QtWidgets.QApplication([])
  
